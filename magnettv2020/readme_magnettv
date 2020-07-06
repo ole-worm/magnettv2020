@@ -7,7 +7,7 @@ Taylor Healy
 ABOUT THIS WORK
 Magnet TV 2020 refers to the Nam Jun Paik’s 1965 sculpture Magnet TV. The artist intended for visitors to push the giant magnet around the top of the CRT cabinet to change the image on the screen. Due to safety issues, the Whitney does not allow visitors to interact, but collections care staff are able to move the magnet around to demonstrate this component of the sculpture. I felt that visitors are missing this integral part of the intended experience, so I created an interactive simulation for visitors to enjoy.
 
-In the folder "magnet tv" click on magnettv.html and open it in a Google Chrome browser. 
+In the folder "magnet tv" click on magnettv.html and open it in a Mobile Safari browser. 
 The work is activated by a user clicking and dragging the magnet on top of the CRT cabinet.
 It is meant to simulate Nam Jun Paik's "Magnet TV" (1965). 
 As the user clicks and drags the magnet across the top of the CRT cabinet, 
@@ -23,8 +23,20 @@ The format was chosen because .pngs retain transparency, allowing for the layeri
 ===================================
 DESCRIPTION OF FILES: 
 /magnettv
-Magnettv.html-- contains javascript and css, and calls p5js libraries which are also in the folder. References pngs in the images subfolder.
-p5.dom.min.js -- library for p5.js. created when a p5.js sketch is saved.p5.min.js-- minified version of the library for p5.js. created when a p5.js sketch is saved.p5.sound.min.js-- core library that is part of the p5.js. created when a p5.js sketch is saved.p5.svg.js-- created when a p5.js sketch is saved.sketch.js-- magnettv screen p5.js drawing copied and pasted into magnettv.htmlstyle.css-- css copied directly into the magnettv.html
+index.html-- contains javascript and css, and calls p5js libraries which are also in the folder. References pngs in the images subfolder.
+p5.dom.min.js -- library for p5.js. created when a p5.js sketch is saved.
+p5.min.js-- minified version of the library for p5.js. created when a p5.js sketch is saved.
+p5.sound.min.js-- core library that is part of the p5.js. created when a p5.js sketch is saved.
+p5.svg.js-- created when a p5.js sketch is saved.
+sketch.js-- magnettv screen p5.js drawing copied and pasted into magnettv.html
+style.css-- css copied directly into the magnettv.html
 /magnettv/images
-Cabinet.png-- image of the cabinet.Glow.png--image of the top of the frame of the cabinet.magnet_cropped.png-- image of the magnet.
+Cabinet.png-- image of the cabinet.
+Glow.png--image of the top of the frame of the cabinet.
+magnet_cropped.png-- image of the magnet.
+
+this repository ole-worm/magnettv2020 was deployed to netifly's server's to a website: https://nifty-tereshkova-cc6f4e.netlify.app/
+I added fostergn to collaborate and he made touch events changes which were reviewed and merged by ole-worm to allow for mobile functionality.
+https://stackoverflow.com/questions/21009821/how-to-implement-a-onmousedown-and-onmouseup-on-a-touch-screen-iphone
+
 
