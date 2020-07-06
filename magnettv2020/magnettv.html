@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- created by Taylor Healy in Atom version 1.48.0 on Mac Pro IOS Catalina version 10.15.5 -->
+<html>
+  <head>
+    <title>(: MAGNET TV :)</title>
+  </head>
+<style type ="text/css">
+  #cabinet {
+    position:absolute;
+    z-index: 1;
+    /* z-index: orders the stack of images */
+  }
+  #glow {
+    position: absolute;
+    z-index: 2;
+    /* z-index: orders the stack of images */
+  }
+  #magnet {
+    position: absolute;
+      z-index: 3;
+      /* z-index: orders the stack of images */
+      /* magnet has to have the highest z-index in order for dragElement to work */
+  }
+</style>
+
+  <body>
+    <div>
+      <div id="cabinet">
+        <img src="images/cabinet.png" alt="cabinet" width="720" height="864">
+      </div>
+      <div id="glow">
+        <img src="images/glow.png" alt="glow" width="582" height="476">
+      </div>
+        <div id="magnet">
+          <img src="images/magnet_cropped.png" alt="magnet" width="473" height="326">
+        </div>
+  </body>
+      <script>
+      // Make the magnet DIV element draggagle
+      // js code was modified from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_draggable
+      dragElement(document.getElementById("magnet"));
+
+      function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 =null;
+        if (document.getElementById(elmnt.id + "header")) {
+          /* if present, the header is where you move the DIV from:*/
+          document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        } else {
+          /* otherwise, move the DIV from anywhere inside the DIV:*/
+          elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // get the mouse cursor position at startup:
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          document.onmouseup = closeDragElement;
+          // call a function whenever the cursor moves:
+          document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // calculate the new cursor position:
+          pos1 = pos3 - e.clientX;
+          //pos2 = pos4 - e.clientY; commented out to restrict to X axis
+          pos3 = e.clientX;
+          //pos4 = e.clientY; commented out to restrict to X axis
+          // set the element's new position:
+          elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+          elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+
+        }
+
+        function closeDragElement() {
+          /* stop moving when mouse button is released:*/
+          document.onmouseup = null;
+          document.onmousemove = null;
+        }
+      }
+      </script>
+
+  </body>
+</html>
+
+<html>
+<head>
+  <script src="p5.min.js"></script>
+  <script src="p5.svg.js"></script>
+  <script src="p5.dom.min.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+  <meta charset="utf-8">
+
+</head>
+  <body>
+    <script>
+        //adapted from https://editor.p5js.org/ronicantor/sketches/eq2bIhmh2
+        var t;
+
+        function setup() {
+          createCanvas(720, 864);
+          background(58, 86, 112);
+          stroke(180,255,255,30);
+          //30 opacity
+          noFill();
+          t = 0;
+        }
+
+        function draw() {
+          if(mouseIsPressed === true) {
+            //made interactive by adding mouseX
+            var x1 = (mouseX * noise(t + 115) * 2);
+            var x2 = (width * noise(t + 125) * 2);
+            var x3 = (mouseX * noise(t + 135) * 2);
+            var x4 = (width * noise(t + 145) * 2);
+            var y1 = height * noise(t + 155);
+            var y2 = height * noise(t + 165);
+            var y3 = height * noise(t + 175);
+            var y4 = height * noise(t + 185);
+
+          bezier(x1, y1, x2, y2, x3, y3, x4, y4);
+          //These curves are defined by a series of anchor and control points.
+
+          t += .003;
+          //lower the decimal, the more lines and slower the movement
+
+
+          // clear the background every 500 frames using mod (%) operator
+          //if (frameCount % 500 == 0) {
+        	//background(72, 89, 112);
+         // }
+        }
+        }
+
+    </script>
+
+
+</body>
+</html>

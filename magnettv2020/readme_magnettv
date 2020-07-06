@@ -1,0 +1,30 @@
+README
+===================================
+Magnet TV 2020
+2020
+Taylor Healy
+===================================
+ABOUT THIS WORK
+Magnet TV 2020 refers to the Nam Jun Paik’s 1965 sculpture Magnet TV. The artist intended for visitors to push the giant magnet around the top of the CRT cabinet to change the image on the screen. Due to safety issues, the Whitney does not allow visitors to interact, but collections care staff are able to move the magnet around to demonstrate this component of the sculpture. I felt that visitors are missing this integral part of the intended experience, so I created an interactive simulation for visitors to enjoy.
+
+In the folder "magnet tv" click on magnettv.html and open it in a Google Chrome browser. 
+The work is activated by a user clicking and dragging the magnet on top of the CRT cabinet.
+It is meant to simulate Nam Jun Paik's "Magnet TV" (1965). 
+As the user clicks and drags the magnet across the top of the CRT cabinet, 
+the screen displays the altered CRT signals into an abstract pattern.
+The "screen" was created from a modified p5.js drawing found on the internet.
+The draggable javascript code was modified from a W3 schools tutorial on draggable elements.
+Modifications in the code are annotated by artist comments.
+
+The html contains javascript and css, and calls p5js libraries which are also in the folder. 
+
+The subfolder "images" contains .png one component for the magnet and two for the cabinet.
+The format was chosen because .pngs retain transparency, allowing for the layering of images and p5.js generative drawing. The images were created in Adobe Photoshop from a photo taken by Robersons E. Mates for the national endowment of the arts. https://www.arts.gov/photos/nam-june-paik-artist-who-invented-video-art
+===================================
+DESCRIPTION OF FILES: 
+/magnettv
+Magnettv.html-- contains javascript and css, and calls p5js libraries which are also in the folder. References pngs in the images subfolder.
+p5.dom.min.js -- library for p5.js. created when a p5.js sketch is saved.p5.min.js-- minified version of the library for p5.js. created when a p5.js sketch is saved.p5.sound.min.js-- core library that is part of the p5.js. created when a p5.js sketch is saved.p5.svg.js-- created when a p5.js sketch is saved.sketch.js-- magnettv screen p5.js drawing copied and pasted into magnettv.htmlstyle.css-- css copied directly into the magnettv.html
+/magnettv/images
+Cabinet.png-- image of the cabinet.Glow.png--image of the top of the frame of the cabinet.magnet_cropped.png-- image of the magnet.
+
